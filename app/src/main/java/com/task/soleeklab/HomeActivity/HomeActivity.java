@@ -29,7 +29,6 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.Home
     private HomeContract.Presenter presenter;
     public static CountryAdapter countryAdapter;
     private ArrayList<Country> countryArrayList;
-    public static AppCompatActivity hh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,6 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.Home
         presenter=new HomePresenter(this,new getCountryIntractorImp());
         presenter.getCountryList();
         mAuth=FirebaseAuth.getInstance();
-        hh=this;
 
         }
 
@@ -65,7 +63,6 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.Home
     @Override
     public void showCountryList(ArrayList<Country>countries) {
         countryAdapter.changeSorting(countries);
-        Toast.makeText(HomeActivity.hh,"kkk"+countries.get(2).getName(),Toast.LENGTH_LONG).show();
 
     }
 
